@@ -28,7 +28,7 @@ export function Hero() {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-6 leading-tight">
-              Surveying is <span className="text-accent">Power</span>
+              Surveying is <span className="text-secondary">Power</span>
             </h1>
           </motion.div>
 
@@ -37,7 +37,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <p className="text-lg md:text-xl text-gray-200 mb-8 leading-relaxed max-w-2xl">
+            <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl font-medium">
               Driven to be the best at everything we do. From strategic planning to business execution, 
               we provide superior survey and positioning services for global offshore projects.
             </p>
@@ -51,7 +51,7 @@ export function Hero() {
           >
             <Button 
               size="lg" 
-              className="bg-accent hover:bg-accent/90 text-white font-semibold px-8 py-6 rounded-full text-lg shadow-lg shadow-accent/25"
+              className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8 py-6 rounded-full text-lg shadow-lg shadow-secondary/25"
               onClick={scrollToServices}
             >
               Our Services <ArrowRight className="ml-2 h-5 w-5" />

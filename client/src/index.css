@@ -5,12 +5,14 @@
 @tailwind utilities;
 
 :root {
-  /* Navy Blue Primary Palette */
-  --primary: 222 47% 11%;      /* Deep Navy */
+  /* Colors extracted from Jegsen Logo */
+  --primary: 204 100% 50%;      /* #0099ff - Bright Blue outer ring */
   --primary-foreground: 0 0% 100%;
   
-  /* Vibrant Cyan/Teal Accent */
-  --accent: 199 89% 48%;       /* Bright Blue/Teal */
+  --secondary: 48 100% 50%;     /* #ffcc00 - Yellow center */
+  --secondary-foreground: 222 47% 11%;
+
+  --accent: 15 100% 40%;        /* #cc3300 - Reddish-Orange rays */
   --accent-foreground: 0 0% 100%;
 
   /* Neutral/Backgrounds */

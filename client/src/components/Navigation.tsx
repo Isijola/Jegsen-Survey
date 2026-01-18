@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { Menu, X, Anchor } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logoUrl from "@assets/log_1768761231743.png";
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,19 +35,21 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-nav py-4 shadow-sm" : "bg-transparent py-6"
+        isScrolled ? "glass-nav py-2 shadow-sm" : "bg-transparent py-4"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 group cursor-pointer">
-            <div className="bg-accent p-2 rounded-lg group-hover:bg-primary transition-colors duration-300">
-              <Anchor className="h-6 w-6 text-white" />
-            </div>
+          <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+            <img 
+              src={logoUrl} 
+              alt="Jegsen Survey Logo" 
+              className={`transition-all duration-300 ${isScrolled ? "h-10 w-10" : "h-14 w-14"}`}
+            />
             <span className={`text-xl font-bold font-display tracking-tight transition-colors ${
               isScrolled ? "text-primary" : "text-white"
             }`}>
-              JEGSEN<span className="text-accent">SURVEY</span>
+              JEGSEN<span className="text-secondary">SURVEY</span>
             </span>
           </Link>
 
@@ -56,7 +59,7 @@ export function Navigation() {
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-medium transition-colors hover:text-accent ${
+                className={`text-sm font-semibold transition-colors hover:text-secondary ${
                   isScrolled ? "text-primary/80" : "text-white/90"
                 }`}
               >
@@ -66,7 +69,7 @@ export function Navigation() {
             <Button 
               onClick={() => scrollToSection("contact")}
               variant={isScrolled ? "default" : "secondary"}
-              className="font-semibold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
+              className="font-bold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 rounded-full"
             >
               Get a Quote
             </Button>
@@ -93,12 +96,12 @@ export function Navigation() {
             <button
               key={link.id}
               onClick={() => scrollToSection(link.id)}
-              className="text-left text-lg font-medium text-primary hover:text-accent py-2"
+              className="text-left text-lg font-bold text-primary hover:text-secondary py-2 border-b border-gray-100 last:border-0"
             >
               {link.label}
             </button>
           ))}
-          <Button onClick={() => scrollToSection("contact")} className="w-full">
+          <Button onClick={() => scrollToSection("contact")} className="w-full rounded-full">
             Get a Quote
           </Button>
         </div>

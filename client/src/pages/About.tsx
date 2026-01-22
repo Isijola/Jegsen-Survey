@@ -110,12 +110,13 @@ export default function About() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-16">
+      <footer className="bg-white text-primary py-16 border-t shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
         <div className="container mx-auto px-4 text-center">
-          <img src={logoUrl} alt="Jegsen" className="h-16 w-16 mx-auto mb-6" />
-          <p className="text-gray-400 max-w-md mx-auto mb-8 font-medium">
+          <img src={logoUrl} alt="Jegsen" className="h-20 w-20 mx-auto mb-6" />
+          <h4 className="text-2xl font-bold font-display mb-4">JEGSEN<span className="text-secondary">SURVEY</span></h4>
+          <p className="text-muted-foreground max-w-md mx-auto mb-8 font-bold">
             &copy; {new Date().getFullYear()} Jegsen Survey Nig Ltd. All rights reserved.
-            RC NO:1318699
+            <br />RC NO:1318699
           </p>
         </div>
       </footer>

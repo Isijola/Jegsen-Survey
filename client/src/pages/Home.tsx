@@ -161,44 +161,44 @@ export default function Home() {
       <ContactSection />
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-16 border-t border-white/10">
+      <footer className="bg-white text-primary py-16 border-t shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
         <div className="container mx-auto px-4 md:px-6">
           <div className="grid md:grid-cols-3 gap-12">
             <div>
-              <div className="flex items-center gap-3 mb-6">
-                <img src={logoUrl} alt="Jegsen Survey" className="h-12 w-12" />
-                <span className="text-xl font-bold font-display tracking-tight">
+              <div className="flex items-center gap-4 mb-6">
+                <img src={logoUrl} alt="Jegsen Survey" className="h-16 w-16" />
+                <span className="text-2xl font-bold font-display tracking-tight">
                   JEGSEN<span className="text-secondary">SURVEY</span>
                 </span>
               </div>
-              <p className="text-gray-400 leading-relaxed font-medium">
+              <p className="text-muted-foreground leading-relaxed font-semibold">
                 Setting the standard for survey and positioning surface to subsea. Delivering expertise to global projects for years.
               </p>
             </div>
             
             <div>
-              <h4 className="font-bold text-lg mb-6 text-secondary">Quick Links</h4>
+              <h4 className="font-bold text-lg mb-6 text-primary underline decoration-secondary decoration-2 underline-offset-4">Quick Links</h4>
               <ul className="space-y-3">
-                <li><button onClick={() => document.getElementById("home")?.scrollIntoView({behavior: "smooth"})} className="text-gray-300 hover:text-secondary transition-colors font-semibold">Home</button></li>
-                <li><button onClick={() => document.getElementById("about")?.scrollIntoView({behavior: "smooth"})} className="text-gray-300 hover:text-secondary transition-colors font-semibold">About Us</button></li>
-                <li><button onClick={() => document.getElementById("services")?.scrollIntoView({behavior: "smooth"})} className="text-gray-300 hover:text-secondary transition-colors font-semibold">Services</button></li>
-                <li><button onClick={() => document.getElementById("contact")?.scrollIntoView({behavior: "smooth"})} className="text-gray-300 hover:text-secondary transition-colors font-semibold">Contact</button></li>
+                <li><button onClick={() => document.getElementById("home")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">Home</button></li>
+                <li><button onClick={() => document.getElementById("about")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">About Us</button></li>
+                <li><button onClick={() => document.getElementById("services")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">Services</button></li>
+                <li><button onClick={() => document.getElementById("contact")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">Contact</button></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-bold text-lg mb-6 text-secondary">Legal</h4>
-              <ul className="space-y-3 font-semibold">
-                <li><a href="#" className="text-gray-300 hover:text-secondary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-secondary transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-gray-300 hover:text-secondary transition-colors">Cookie Policy</a></li>
+              <h4 className="font-bold text-lg mb-6 text-primary underline decoration-secondary decoration-2 underline-offset-4">Legal</h4>
+              <ul className="space-y-3 font-bold">
+                <li><a href="#" className="text-muted-foreground hover:text-secondary transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="text-muted-foreground hover:text-secondary transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="text-muted-foreground hover:text-secondary transition-colors">Cookie Policy</a></li>
               </ul>
             </div>
           </div>
           
-          <div className="border-t border-white/10 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-gray-500 text-sm font-medium">
+          <div className="border-t border-gray-100 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm font-bold">
             <p>&copy; {new Date().getFullYear()} Jegsen Survey Nig Ltd. All rights reserved.</p>
-            <p>Driven by integrity and excellence.</p>
+            <p className="text-primary">Driven by integrity and excellence.</p>
           </div>
         </div>
       </footer>

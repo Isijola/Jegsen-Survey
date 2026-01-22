@@ -52,20 +52,18 @@ export function Navigation() {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-nav py-2 shadow-sm" : "bg-transparent py-4"
+        isScrolled ? "bg-white py-2 shadow-md border-b" : "bg-white/95 py-4 shadow-sm"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group cursor-pointer">
+          <Link href="/" className="flex items-center gap-4 group cursor-pointer">
             <img 
               src={logoUrl} 
               alt="Jegsen Survey Logo" 
-              className={`transition-all duration-300 ${isScrolled ? "h-10 w-10" : "h-14 w-14"}`}
+              className={`transition-all duration-300 ${isScrolled ? "h-14 w-14" : "h-20 w-20"}`}
             />
-            <span className={`text-xl font-bold font-display tracking-tight transition-colors ${
-              isScrolled ? "text-primary" : "text-white"
-            }`}>
+            <span className={`text-2xl font-bold font-display tracking-tight transition-colors text-primary`}>
               JEGSEN<span className="text-secondary">SURVEY</span>
             </span>
           </Link>
@@ -77,9 +75,7 @@ export function Navigation() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`text-sm font-semibold transition-colors hover:text-secondary ${
-                    isScrolled ? "text-primary/80" : "text-white/90"
-                  }`}
+                  className="text-sm font-bold transition-colors hover:text-secondary text-primary/90"
                 >
                   {link.label}
                 </Link>
@@ -87,9 +83,7 @@ export function Navigation() {
                 <button
                   key={link.label}
                   onClick={() => handleNavClick(link)}
-                  className={`text-sm font-semibold transition-colors hover:text-secondary ${
-                    isScrolled ? "text-primary/80" : "text-white/90"
-                  }`}
+                  className="text-sm font-bold transition-colors hover:text-secondary text-primary/90"
                 >
                   {link.label}
                 </button>
@@ -97,8 +91,8 @@ export function Navigation() {
             ))}
             <Button 
               onClick={() => scrollToSection("contact")}
-              variant={isScrolled ? "default" : "secondary"}
-              className="font-bold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 rounded-full"
+              variant="default"
+              className="font-bold shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5 rounded-full px-8"
             >
               Get a Quote
             </Button>
@@ -110,9 +104,9 @@ export function Navigation() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? (
-              <X className={isScrolled ? "text-primary" : "text-white"} />
+              <X className="text-primary" />
             ) : (
-              <Menu className={isScrolled ? "text-primary" : "text-white"} />
+              <Menu className="text-primary" />
             )}
           </button>
         </div>

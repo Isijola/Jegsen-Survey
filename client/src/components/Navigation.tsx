@@ -25,12 +25,29 @@ export function Navigation() {
   };
 
   const navLinks = [
-    { label: "Home", id: "home" },
-    { label: "About", id: "about" },
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
     { label: "Services", id: "services" },
     { label: "HSE", id: "hse" },
     { label: "Contact", id: "contact" },
   ];
+
+  const handleNavClick = (link: typeof navLinks[0]) => {
+    if (link.href) {
+      // It's a real page link
+      setIsMobileMenuOpen(false);
+      return;
+    }
+    
+    if (link.id) {
+      // It's a section on home page
+      if (window.location.pathname !== "/") {
+        window.location.href = `/#${link.id}`;
+      } else {
+        scrollToSection(link.id);
+      }
+    }
+  };
 
   return (
     <nav
@@ -56,15 +73,27 @@ export function Navigation() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-semibold transition-colors hover:text-secondary ${
-                  isScrolled ? "text-primary/80" : "text-white/90"
-                }`}
-              >
-                {link.label}
-              </button>
+              link.href ? (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className={`text-sm font-semibold transition-colors hover:text-secondary ${
+                    isScrolled ? "text-primary/80" : "text-white/90"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <button
+                  key={link.label}
+                  onClick={() => handleNavClick(link)}
+                  className={`text-sm font-semibold transition-colors hover:text-secondary ${
+                    isScrolled ? "text-primary/80" : "text-white/90"
+                  }`}
+                >
+                  {link.label}
+                </button>
+              )
             ))}
             <Button 
               onClick={() => scrollToSection("contact")}

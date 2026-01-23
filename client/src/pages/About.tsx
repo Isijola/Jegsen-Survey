@@ -1,5 +1,6 @@
 import { Navigation } from "@/components/Navigation";
 import { PageHeader, ValueCard, CoreValueItem } from "@/components/PageLayout";
+import { CookieConsent } from "@/components/CookieConsent";
 import { Shield, Target, Rocket, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import logoUrl from "@assets/log_1768761231743.png";
@@ -36,6 +37,7 @@ export default function About() {
         title="About Jegsen Survey" 
         subtitle="Setting the standard for survey and positioning surface to subsea for global offshore projects."
       />
+      <CookieConsent />
 
       {/* Main Content */}
       <section className="py-24 bg-white">

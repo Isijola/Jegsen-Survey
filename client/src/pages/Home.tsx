@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ContactSection } from "@/components/ContactSection";
+import { CookieConsent } from "@/components/CookieConsent";
 import { CheckCircle2, Shield, Globe2, Users } from "lucide-react";
 import { motion } from "framer-motion";
 import logoUrl from "@assets/log_1768761231743.png";
@@ -30,6 +31,7 @@ export default function Home() {
       <Navigation />
       
       <Hero />
+      <CookieConsent />
 
       {/* Services Section */}
       <section id="services" className="py-24 bg-gray-50">

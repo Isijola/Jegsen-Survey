@@ -9,15 +9,24 @@ export function Hero() {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
+      {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
-        {/* Unsplash: Offshore oil rig survey vessel at sunset */}
-        <img
-          src="https://images.unsplash.com/photo-1541944743827-e9529e843f41?auto=format&fit=crop&q=80&w=2000"
-          alt="Offshore Survey Operations"
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40 mix-blend-multiply" />
+        >
+          <source src="/surveying-hero.mp4" type="video/mp4" />
+          {/* Fallback Image */}
+          <img
+            src="https://images.unsplash.com/photo-1541944743827-e9529e843f41?auto=format&fit=crop&q=80&w=2000"
+            alt="Offshore Survey Operations"
+            className="w-full h-full object-cover"
+          />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/40 mix-blend-multiply" />
       </div>
 
       <div className="container relative z-10 px-4 md:px-6 pt-20">

@@ -2,6 +2,8 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
+import heroVideo from "@/assets/videos/hero-african-surveyor.mp4";
+
 export function Hero() {
   const scrollToServices = () => {
     document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
@@ -18,7 +20,7 @@ export function Hero() {
           playsInline
           className="w-full h-full object-cover"
         >
-          <source src="/surveying-hero.mp4" type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
           {/* Fallback Image */}
           <img
             src="https://images.unsplash.com/photo-1541944743827-e9529e843f41?auto=format&fit=crop&q=80&w=2000"

@@ -40,6 +40,7 @@ export function Navigation() {
   const navLinks = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
+    { label: "Onshore Support", href: "/onshore-support" },
     { label: "Positioning", dropdown: true },
     { label: "Services", id: "services" },
     { label: "HSE", id: "hse" },

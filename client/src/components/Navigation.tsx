@@ -94,9 +94,9 @@ export function Navigation() {
                   <DropdownMenuContent className="w-56 bg-white border shadow-xl p-2 rounded-xl">
                     {positioningItems.map((item) => (
                       <DropdownMenuItem 
-                        key={item.id}
+                        key={item.label}
                         className="font-bold text-primary hover:text-secondary focus:text-secondary cursor-pointer py-2 px-3 rounded-lg"
-                        onClick={() => handleNavClick({ id: "services" })}
+                        onClick={() => handleNavClick(item)}
                       >
                         {item.label}
                       </DropdownMenuItem>

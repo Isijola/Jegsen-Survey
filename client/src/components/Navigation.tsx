@@ -31,7 +31,7 @@ export function Navigation() {
   };
 
   const positioningItems = [
-    { label: "Surface Positioning", id: "surface" },
+    { label: "Surface Positioning", href: "/surface-positioning" },
     { label: "Subsea Positioning", id: "subsea" },
     { label: "Installation Positioning", id: "installation" },
     { label: "Dimensional Control", id: "dimensional" },
@@ -50,6 +50,7 @@ export function Navigation() {
     if (link.href) {
       // It's a real page link
       setIsMobileMenuOpen(false);
+      window.location.href = link.href;
       return;
     }
     

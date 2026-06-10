@@ -3,58 +3,52 @@ import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageLayout";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Link } from "wouter";
-import { ChevronRight, Navigation2, Ship, Map, Anchor, ShieldAlert, RadioTower } from "lucide-react";
+import { ChevronRight, Maximize, FileWarning, Ruler, PenTool, Database } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const subServices = [
   {
-    title: "Rig Positioning",
-    description: "Precise navigation and tracking for semi-submersibles and jack-up rigs during critical rig moves and final positioning.",
-    icon: Navigation2,
+    title: "3D Laser Scanning",
+    description: "High-resolution point cloud generation capturing exact geometries of offshore facilities, vessels, and complex structures.",
+    icon: Maximize,
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Barge & Tug Management",
-    description: "Coordinated tracking and telemetry systems for anchor handling tugs and derrick barges during complex offshore installations.",
-    icon: Ship,
+    title: "Spool & Structure Control",
+    description: "Precise dimensional verification of pipe spools and subsea structures prior to load-out to guarantee first-time fit.",
+    icon: Ruler,
     color: "bg-emerald-500/10 text-emerald-600"
   },
   {
-    title: "Seismic Support",
-    description: "Accurate positioning and quality control for 2D, 3D, and 4D seismic acquisition vessels and towed streamer arrays.",
-    icon: RadioTower,
+    title: "Clash Detection",
+    description: "Virtual installation simulations using scanned data to identify and resolve spatial conflicts before offshore execution.",
+    icon: FileWarning,
     color: "bg-orange-500/10 text-orange-600"
   },
   {
-    title: "Cable & Pipelay Support",
-    description: "Continuous vessel navigation and touchdown monitoring ensuring flexible and rigid pipes are laid accurately along the designated route.",
-    icon: Map,
+    title: "AutoCAD Modelling",
+    description: "Conversion of raw point cloud data into intelligent 3D CAD models tailored to client engineering specifications.",
+    icon: PenTool,
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Anchor Pattern Monitoring",
-    description: "Real-time visualization and clearance checks of complex anchor patterns to prevent subsea asset interference.",
-    icon: Anchor,
+    title: "As-Built Documentation",
+    description: "Comprehensive spatial databases and accurate as-built drawings reflecting the true state of operational assets.",
+    icon: Database,
     color: "bg-rose-500/10 text-rose-600"
-  },
-  {
-    title: "Collision Avoidance",
-    description: "Advanced proximity monitoring systems and safety zones to protect marine spreads working in congested offshore fields.",
-    icon: ShieldAlert,
-    color: "bg-yellow-500/10 text-yellow-600"
   }
 ];
 
-export default function SurfacePositioning() {
+export default function DimensionalControl() {
   return (
     <div className="bg-background min-h-screen">
       <Navigation />
 
       <PageHeader
-        title="Surface Positioning"
-        subtitle="Delivering highly accurate surface navigation and multi-vessel tracking for complex offshore marine operations."
-        image="https://images.unsplash.com/photo-1559828551-2eb94a15a0c0?auto=format&fit=crop&q=80&w=2000"
+        title="Dimensional Control"
+        subtitle="Eliminating spatial uncertainty through high-definition 3D laser scanning and rigorous dimensional verification."
+        image="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=2000"
       />
       <CookieConsent />
 
@@ -66,7 +60,7 @@ export default function SurfacePositioning() {
             <ChevronRight className="h-4 w-4 text-muted-foreground" />
             <span className="text-muted-foreground">Positioning</span>
             <ChevronRight className="h-4 w-4 text-muted-foreground" />
-            <span className="text-primary">Surface Positioning</span>
+            <span className="text-primary">Dimensional Control</span>
           </nav>
         </div>
       </div>
@@ -74,9 +68,9 @@ export default function SurfacePositioning() {
       <main className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-bold font-display text-primary mb-6">Marine Navigation Excellence</h2>
+            <h2 className="text-3xl font-bold font-display text-primary mb-6">First-Time Fit Assurance</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Safe and efficient offshore operations depend on absolute spatial awareness at the surface. We provide sophisticated GNSS navigation and telemetry solutions tailored for multi-vessel operations. Whether coordinating a multi-tug rig move, managing an anchor handling spread, or supporting a delicate pipelay campaign, our highly trained survey personnel deliver the real-time data required to execute operations flawlessly and safely.
+              In offshore engineering, spatial errors lead to costly delays. Our dimensional control services provide the crucial link between theoretical design and physical reality. By leveraging advanced 3D laser scanning and total station technology, we create digital twins of complex environments. This allows for accurate clash detection, precise spool fabrication, and the assurance that new components will integrate seamlessly on the first attempt.
             </p>
           </div>
 

@@ -9,29 +9,60 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, subtitle, image }: PageHeaderProps) {
   return (
-    <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+    <section
+      className="
+        relative
+        flex
+        items-center
+        justify-center
+        overflow-hidden
+        min-h-[60vh]
+        md:min-h-[50vh]
+        pt-24
+        pb-16
+      "
+    >
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
-          src={image || "https://images.unsplash.com/photo-1541944743827-e9529e843f41?auto=format&fit=crop&q=80&w=2000"}
+          src={
+            image ||
+            "https://images.unsplash.com/photo-1541944743827-e9529e843f41?auto=format&fit=crop&q=80&w=2000"
+          }
           alt={title}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-primary/80 mix-blend-multiply" />
       </div>
+
+      {/* Content */}
       <div className="container relative z-10 px-4 text-center">
-        <motion.h1 
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-6xl font-bold font-display text-white mb-4"
+          className="
+            font-display
+            font-bold
+            text-white
+            mb-4
+            leading-tight
+            text-[clamp(2rem,5vw,3.75rem)]
+          "
         >
           {title}
         </motion.h1>
+
         {subtitle && (
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-lg text-gray-200 max-w-2xl mx-auto"
+            className="
+              mx-auto
+              max-w-3xl
+              text-gray-200
+              text-[clamp(1rem,2.5vw,1.25rem)]
+            "
           >
             {subtitle}
           </motion.p>

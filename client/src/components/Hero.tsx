@@ -10,7 +10,7 @@ export function Hero() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-[150svh] flex items-center justify-center overflow-hidden">
       {/* Background Video with Overlay */}
       <div className="absolute inset-0 z-0">
         <video
@@ -28,50 +28,68 @@ export function Hero() {
             className="w-full h-full object-cover"
           />
         </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 to-primary/40 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-secondary/95 to-secondary/40 mix-blend-multiply" />
       </div>
 
       <div className="container relative z-10 px-4 md:px-6 pt-20">
-        <div className="max-w-3xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+        <div className="max-w-3xl py-24 md:py-32">
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            className="
+              font-display font-bold text-white leading-tight mb-6
+              text-[clamp(2.2rem,6vw,4.5rem)]
+            "
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display text-white mb-6 leading-tight">
-              Surveying is <span className="text-secondary">Power</span>
-            </h1>
-          </motion.div>
+            Surveying is{" "}
+            <span className="text-white/95">Power</span>
+          </motion.h1>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
+          {/* Description */}
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="
+              text-gray-100 mb-10 max-w-2xl
+              text-[clamp(1rem,2.5vw,1.25rem)]
+            "
           >
-            <p className="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-2xl font-medium">
-              Driven to be the best at everything we do. From strategic planning to business execution, 
-              we provide superior survey and positioning services for global offshore projects.
-            </p>
-          </motion.div>
+            Driven to be the best at everything we do. From strategic planning to
+            business execution, we provide superior survey and positioning
+            services for global offshore projects.
+          </motion.p>
 
+          {/* Actions */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4"
           >
-            <Button 
-              size="lg" 
-              className="bg-secondary hover:bg-secondary/90 text-primary font-bold px-8 py-6 rounded-full text-lg shadow-lg shadow-secondary/25"
-              onClick={scrollToServices}
+            <Button
+              size="lg"
+              onClick={() => scrollToServices()}
+              className="
+                bg-accent hover:bg-secondary/90
+                text-white font-bold rounded-full
+                px-8 py-6 text-base md:text-lg
+                shadow-lg shadow-secondary/30
+              "
             >
               Our Services <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
-              className="border-white text-white hover:bg-white/10 px-8 py-6 rounded-full text-lg font-semibold bg-transparent"
+
+            <Button
+              size="lg"
+              variant="outline"
               onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
+              className="
+                border-white text-white bg-transparent
+                hover:bg-white/10 rounded-full
+                px-8 py-6 text-base md:text-lg
+              "
             >
               Learn More
             </Button>

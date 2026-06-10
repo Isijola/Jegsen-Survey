@@ -1,35 +1,59 @@
+import { Link } from "wouter";
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { ServiceCard } from "@/components/ServiceCard";
 import { ContactSection } from "@/components/ContactSection";
+import { FAQSection } from "@/components/FAQSection";
 import { CookieConsent } from "@/components/CookieConsent";
 import { CheckCircle2, Shield, Globe2, Users } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 import logoUrl from "@assets/log_1768761231743.png";
+import onshoreSupportImg from "@/assets/onshore-support.jpg";
+import surveyServicesImg from "@/assets/survey-services.jpeg";
+import positioningServicesImg from "@/assets/positioning-services.jpeg";
+import aboutTeamImg from "@/assets/about-team.jpeg";
 
 export default function Home() {
   const services = [
     {
-      title: "Onshore Survey",
-      description: "Comprehensive land survey solutions working with clearly defined governance arrangements. We provide precise topographic and cadastral surveying.",
-      image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800",
+      title: "Onshore Support",
+      description: "Integrated onshore support services operating under robust, transparent governance structures. We deliver reliable topographic and cadastral survey",
+      image: onshoreSupportImg,
     },
     {
-      title: "Offshore Survey",
-      description: "Global management expertise delivering superior survey services to marine sectors including hydrographic surveys and positioning.",
-      image: "https://images.unsplash.com/photo-1605727216801-e27ce1d0cc28?auto=format&fit=crop&q=80&w=800",
+      title: "Survey Services",
+      description: "Global management expertise delivering high-quality survey services to marine sectors across all project phases and operational requirements.",
+      image: surveyServicesImg,
     },
     {
-      title: "GIS Survey",
-      description: "Advanced Geographic Information Systems based on international acceptable standards for data visualization and spatial analysis.",
-      image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800",
+      title: "Positioning Services",
+      description: "World class expertise supporting accurate positioning services for marine sectors across the full lifecycle of projects and operations.",
+      image: positioningServicesImg,
     },
   ];
+
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll progress relative to the container.
+  // "start end" means when the top of the container touches the bottom of the viewport.
+  // "start center" means when the top of the container reaches the center of the viewport.
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "start center"],
+  });
+
+  // Transform scroll progress to styles
+  // Start with a large pill shape ("40vw" margin on each side) and shrink to full width
+  const wrapperMargins = useTransform(scrollYProgress, [0, 1], ["40vw", "0vw"]);
+  // Start with max radius (200px to fully curve the 20vw width) and flatten to 0px
+  const wrapperRadius = useTransform(scrollYProgress, [0, 1], ["200px", "0px"]);
 
   return (
     <div className="bg-background min-h-screen">
       <Navigation />
-      
+
       <Hero />
       <CookieConsent />
 
@@ -40,7 +64,7 @@ export default function Home() {
             <span className="text-accent font-bold tracking-wider uppercase text-sm mb-2 block">What We Do</span>
             <h2 className="text-4xl font-bold font-display text-primary mb-4">Our Expertise</h2>
             <p className="text-muted-foreground text-lg">
-              Delivering high-precision survey solutions across land and sea with state-of-the-art technology.
+              Delivering high precision survey solutions across land and sea with state of the art technology.
             </p>
           </div>
 
@@ -62,7 +86,7 @@ export default function Home() {
       <section id="about" className="py-24 bg-white overflow-hidden">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div 
+            <motion.div
               className="lg:w-1/2 relative"
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -70,9 +94,9 @@ export default function Home() {
               transition={{ duration: 0.6 }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-primary/5">
-                <img 
-                  src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Team Meeting" 
+                <img
+                  src={aboutTeamImg}
+                  alt="Team Meeting"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
@@ -80,7 +104,7 @@ export default function Home() {
               <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-secondary/20 rounded-full blur-3xl -z-10" />
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="lg:w-1/2"
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -90,11 +114,11 @@ export default function Home() {
               <h2 className="text-4xl font-bold font-display text-primary mb-6">About Jegsen Survey</h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Jegsen Survey Nigeria Limited is a survey company registered with the Corporate Affairs Commission (RC NO:1318699). 
+                  Jegsen Survey Nigeria Limited is a survey company registered with the Corporate Affairs Commission (RC NO:1318699).
                   We follow a very strict code of integrity, high standards, and ethical business practices.
                 </p>
                 <p>
-                  Our success is due in large part to the combined knowledge, expertise, and synergy of our global management team and strategic partners. 
+                  Our success is due in large part to the combined knowledge, expertise, and synergy of our world class team and strategic partners.
                   We are driven to be the best at everything we do, from strategic planning to business execution and customer satisfaction.
                 </p>
               </div>
@@ -116,7 +140,7 @@ export default function Home() {
                   <div className="bg-secondary/20 p-1.5 rounded-full">
                     <CheckCircle2 className="text-primary h-5 w-5" />
                   </div>
-                  <span className="font-bold text-primary">Advanced Tech</span>
+                  <span className="font-bold text-primary">Cutting edge Technology</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="bg-secondary/20 p-1.5 rounded-full">
@@ -138,10 +162,10 @@ export default function Home() {
             {[
               { icon: Shield, label: "Integrity", value: "100%" },
               { icon: CheckCircle2, label: "High Standards", value: "ISO" },
-              { icon: Globe2, label: "Global Expertise", value: "40+" },
-              { icon: Users, label: "Strategic Partners", value: "25+" },
+              { icon: Globe2, label: "Years of Experience", value: "12+" },
+              { icon: Users, label: "Strategic Partners", value: "14+" },
             ].map((stat, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -162,48 +186,42 @@ export default function Home() {
 
       <ContactSection />
 
-      {/* Footer */}
-      <footer className="bg-white text-primary py-16 border-t shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-        <div className="container mx-auto px-4 md:px-6">
-          <div className="grid md:grid-cols-3 gap-12">
-            <div>
-              <div className="flex items-center gap-4 mb-6">
-                <img src={logoUrl} alt="Jegsen Survey" className="h-16 w-16" />
-                <span className="text-2xl font-bold font-display tracking-tight">
-                  JEGSEN<span className="text-secondary">SURVEY</span>
-                </span>
-              </div>
-              <p className="text-muted-foreground leading-relaxed font-semibold">
-                Setting the standard for survey and positioning surface to subsea. Delivering expertise to global projects for years.
-              </p>
-            </div>
-            
-            <div>
-              <h4 className="font-bold text-lg mb-6 text-primary underline decoration-secondary decoration-2 underline-offset-4">Quick Links</h4>
-              <ul className="space-y-3">
-                <li><button onClick={() => document.getElementById("home")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">Home</button></li>
-                <li><button onClick={() => document.getElementById("about")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">About Us</button></li>
-                <li><button onClick={() => document.getElementById("services")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">Services</button></li>
-                <li><button onClick={() => document.getElementById("contact")?.scrollIntoView({behavior: "smooth"})} className="text-muted-foreground hover:text-secondary transition-colors font-bold">Contact</button></li>
-              </ul>
-            </div>
+      <div ref={containerRef} className="bg-white pb-0">
+        {/* LexSelect-style Bottom Dark Wrapper for FAQ and Footer */}
+        <motion.div
+          style={{
+            marginLeft: wrapperMargins,
+            marginRight: wrapperMargins,
+            borderTopLeftRadius: wrapperRadius,
+            borderTopRightRadius: wrapperRadius,
+          }}
+          className="relative bg-[#000000] -mt-10 md:-mt-16 pt-16 md:pt-20 shadow-[0_-15px_40px_rgba(50,50,255,0.15)] border-t border-blue-500/20 overflow-hidden z-20"
+        >
 
-            <div>
-              <h4 className="font-bold text-lg mb-6 text-primary underline decoration-secondary decoration-2 underline-offset-4">Legal</h4>
-              <ul className="space-y-3 font-bold">
-                <li><a href="#" className="text-muted-foreground hover:text-secondary transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-secondary transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="text-muted-foreground hover:text-secondary transition-colors">Cookie Policy</a></li>
-              </ul>
-            </div>
+          {/* Atmospheric Radial Glows mimicking LexSelect */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_top,rgba(50,50,255,0.15)_0%,transparent_60%)] rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(80,40,255,0.1)_0%,transparent_70%)] rounded-full blur-3xl pointer-events-none" />
+
+          {/* Dynamic Scrolling Marquee Text */}
+          <div className="absolute top-1/4 left-0 w-full overflow-hidden pointer-events-none select-none z-0">
+            <motion.div
+              animate={{ x: [0, -2000] }}
+              transition={{ repeat: Infinity, duration: 40, ease: "linear" }}
+              className="flex whitespace-nowrap text-[100px] md:text-[140px] font-black text-white/[0.04] font-display text-zinc-800"
+            >
+              <span className="shrink-0 mr-[100px]">SURVEY & POSITIONING</span>
+              <span className="shrink-0 mr-[100px]">SUBSEA EXPERTISE</span>
+              <span className="shrink-0 mr-[100px]">ONSHORE SUPPORT</span>
+              <span className="shrink-0 mr-[100px]">SURVEY & POSITIONING</span>
+            </motion.div>
           </div>
-          
-          <div className="border-t border-gray-100 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-muted-foreground text-sm font-bold">
-            <p>&copy; {new Date().getFullYear()} Jegsen Survey Nig Ltd. All rights reserved.</p>
-            <p className="text-primary">Driven by integrity and excellence.</p>
+
+          <div className="relative z-10">
+            <FAQSection />
+            <Footer transparentBg />
           </div>
-        </div>
-      </footer>
+        </motion.div>
+      </div>
     </div>
   );
 }

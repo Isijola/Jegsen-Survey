@@ -3,58 +3,52 @@ import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageLayout";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Link } from "wouter";
-import { ChevronRight, Navigation2, Ship, Map, Anchor, ShieldAlert, RadioTower } from "lucide-react";
+import { ChevronRight, Radio, Waves, Cpu, Crosshair, Wifi } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 
 const subServices = [
   {
-    title: "Rig Positioning",
-    description: "Precise navigation and tracking for semi-submersibles and jack-up rigs during critical rig moves and final positioning.",
-    icon: Navigation2,
+    title: "Acoustic Metrology",
+    description: "High-precision acoustic measurements for subsea structures, ensuring accurate distance and angle calculations for spoolpiece fabrication.",
+    icon: Radio,
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Barge & Tug Management",
-    description: "Coordinated tracking and telemetry systems for anchor handling tugs and derrick barges during complex offshore installations.",
-    icon: Ship,
+    title: "ROV Positioning",
+    description: "Robust USBL and LBL positioning systems for Remotely Operated Vehicles, guaranteeing precise navigation in challenging deep-water environments.",
+    icon: Waves,
     color: "bg-emerald-500/10 text-emerald-600"
   },
   {
-    title: "Seismic Support",
-    description: "Accurate positioning and quality control for 2D, 3D, and 4D seismic acquisition vessels and towed streamer arrays.",
-    icon: RadioTower,
+    title: "LBL Array Installation",
+    description: "Deployment, calibration, and operational management of Long Baseline (LBL) acoustic arrays for field-wide subsea positioning.",
+    icon: Wifi,
     color: "bg-orange-500/10 text-orange-600"
   },
   {
-    title: "Cable & Pipelay Support",
-    description: "Continuous vessel navigation and touchdown monitoring ensuring flexible and rigid pipes are laid accurately along the designated route.",
-    icon: Map,
+    title: "Subsea Structure Placement",
+    description: "Real-time positioning and monitoring during the lowering and installation of manifolds, templates, and wellheads.",
+    icon: Crosshair,
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Anchor Pattern Monitoring",
-    description: "Real-time visualization and clearance checks of complex anchor patterns to prevent subsea asset interference.",
-    icon: Anchor,
+    title: "Inertial Navigation Systems",
+    description: "Integration of advanced INS technology with acoustic positioning to provide seamless, high-update-rate subsea tracking.",
+    icon: Cpu,
     color: "bg-rose-500/10 text-rose-600"
-  },
-  {
-    title: "Collision Avoidance",
-    description: "Advanced proximity monitoring systems and safety zones to protect marine spreads working in congested offshore fields.",
-    icon: ShieldAlert,
-    color: "bg-yellow-500/10 text-yellow-600"
   }
 ];
 
-export default function SurfacePositioning() {
+export default function SubseaPositioning() {
   return (
     <div className="bg-background min-h-screen">
       <Navigation />
 
       <PageHeader
-        title="Surface Positioning"
-        subtitle="Delivering highly accurate surface navigation and multi-vessel tracking for complex offshore marine operations."
-        image="https://images.unsplash.com/photo-1559828551-2eb94a15a0c0?auto=format&fit=crop&q=80&w=2000"
+        title="Subsea Positioning"
+        subtitle="Delivering pinpoint accuracy beneath the surface through advanced acoustic and inertial navigation solutions."
+        image="https://images.unsplash.com/photo-1682687981674-0927add86f2b?auto=format&fit=crop&q=80&w=2000"
       />
       <CookieConsent />
 
@@ -66,7 +60,7 @@ export default function SurfacePositioning() {
             <ChevronRight className="h-4 w-4 text-muted-foreground" />
             <span className="text-muted-foreground">Positioning</span>
             <ChevronRight className="h-4 w-4 text-muted-foreground" />
-            <span className="text-primary">Surface Positioning</span>
+            <span className="text-primary">Subsea Positioning</span>
           </nav>
         </div>
       </div>
@@ -74,9 +68,9 @@ export default function SurfacePositioning() {
       <main className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-bold font-display text-primary mb-6">Marine Navigation Excellence</h2>
+            <h2 className="text-3xl font-bold font-display text-primary mb-6">Deep Water Accuracy</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Safe and efficient offshore operations depend on absolute spatial awareness at the surface. We provide sophisticated GNSS navigation and telemetry solutions tailored for multi-vessel operations. Whether coordinating a multi-tug rig move, managing an anchor handling spread, or supporting a delicate pipelay campaign, our highly trained survey personnel deliver the real-time data required to execute operations flawlessly and safely.
+              Operating in the subsea environment demands uncompromising precision and reliability. We provide state-of-the-art positioning services that guide critical underwater operations, from complex field developments to intricate intervention tasks. Our teams utilize the latest in acoustic positioning technology to deliver trusted results in the harshest conditions.
             </p>
           </div>
 

@@ -1,12 +1,13 @@
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageLayout";
 import { CookieConsent } from "@/components/CookieConsent";
-import { 
-  Users, 
-  Lightbulb, 
-  FileText, 
-  Monitor, 
-  BarChart, 
+import {
+  Users,
+  Lightbulb,
+  FileText,
+  Monitor,
+  BarChart,
   Settings,
   ArrowRight
 } from "lucide-react";
@@ -36,13 +37,13 @@ const features = [
   },
   {
     title: "Remote Operations",
-    description: "Supporting online and offline remote operations for over 10 years. We offer onshore data processing to reduce CO2 emissions.",
+    description: "Jegsen delivers projects through proven remote operating models, supporting both connected and offline workflows. To reduce environmental impact, we provide onshore data processing via remote-working teams and offer technical support to clients developing their own remote processing environments.",
     icon: Monitor,
     color: "bg-purple-500/10 text-purple-600"
   },
   {
     title: "Deliverables & Reporting",
-    description: "Robust data management and storage. We merge data from multiple sources to deliver high-quality as-builts and GIS solutions.",
+    description: "At Jegsen Survey, protecting client data is a priority. Our secure in-house storage ensures information is safe, reliable, and accessible. Experienced onshore and offshore teams manage and process complex data, combining multiple sources to deliver accurate final as-builts supported by in-house GIS expertise.",
     icon: BarChart,
     color: "bg-rose-500/10 text-rose-600"
   },
@@ -58,9 +59,9 @@ export default function OnshoreSupport() {
   return (
     <div className="bg-background min-h-screen">
       <Navigation />
-      
-      <PageHeader 
-        title="Onshore Support" 
+
+      <PageHeader
+        title="Onshore Support"
         subtitle="Professional survey knowledge and support on call. Acting as your survey department or supporting your in-house experts."
       />
       <CookieConsent />
@@ -68,7 +69,7 @@ export default function OnshoreSupport() {
       <main className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
-            <motion.div 
+            <motion.div
               className="lg:w-1/2"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -93,16 +94,16 @@ export default function OnshoreSupport() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="lg:w-1/2 relative"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img 
-                  src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Survey Engineering Support" 
+                <img
+                  src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&q=80&w=1000"
+                  alt="Survey Engineering Support"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
@@ -140,15 +141,7 @@ export default function OnshoreSupport() {
         </div>
       </main>
 
-      <footer className="bg-white text-primary py-16 border-t">
-        <div className="container mx-auto px-4 text-center">
-          <img src={logoUrl} alt="Jegsen" className="h-20 w-20 mx-auto mb-6" />
-          <h4 className="text-2xl font-bold font-display mb-4">JEGSEN<span className="text-secondary">SURVEY</span></h4>
-          <p className="text-muted-foreground max-w-md mx-auto mb-8 font-bold">
-            &copy; {new Date().getFullYear()} Jegsen Survey Nig Ltd. All rights reserved.
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

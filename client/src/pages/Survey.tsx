@@ -3,46 +3,41 @@ import { Footer } from "@/components/Footer";
 import { PageHeader } from "@/components/PageLayout";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Link } from "wouter";
-import { ChevronRight, Navigation2, Ship, Map, Anchor, ShieldAlert, RadioTower } from "lucide-react";
+import { ChevronRight, Anchor, Target, Compass, Gauge, Ship } from "lucide-react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import logoUrl from "@assets/log_1768761231743.png";
 
 const subServices = [
   {
-    title: "Rig Positioning",
-    description: "Precise navigation and tracking for semi-submersibles and jack-up rigs during critical rig moves and final positioning.",
-    icon: Navigation2,
+    title: "Seabed Surveys",
+    description: "Supporting seabed surveys globally from customer vessels or ROVs, providing critical data for offshore development.",
+    icon: Anchor,
     color: "bg-blue-500/10 text-blue-600"
   },
   {
-    title: "Barge & Tug Management",
-    description: "Coordinated tracking and telemetry systems for anchor handling tugs and derrick barges during complex offshore installations.",
-    icon: Ship,
+    title: "Burial Support",
+    description: "Rapid delivery of burial data to allow for timely decisions on remedial work and asset protection.",
+    icon: Target,
     color: "bg-emerald-500/10 text-emerald-600"
   },
   {
-    title: "Seismic Support",
-    description: "Accurate positioning and quality control for 2D, 3D, and 4D seismic acquisition vessels and towed streamer arrays.",
-    icon: RadioTower,
+    title: "Post Installation Survey",
+    description: "Confirming as-left status of assets to provide proof of completion and adherence to quality standards.",
+    icon: Compass,
     color: "bg-orange-500/10 text-orange-600"
   },
   {
-    title: "Cable & Pipelay Support",
-    description: "Continuous vessel navigation and touchdown monitoring ensuring flexible and rigid pipes are laid accurately along the designated route.",
-    icon: Map,
+    title: "Inspection Support",
+    description: "Extensive experience in data acquisition and reporting for annual pipeline and structural campaigns.",
+    icon: Ship,
     color: "bg-purple-500/10 text-purple-600"
   },
   {
-    title: "Anchor Pattern Monitoring",
-    description: "Real-time visualization and clearance checks of complex anchor patterns to prevent subsea asset interference.",
-    icon: Anchor,
+    title: "Metrology",
+    description: "Advanced metrology services including LBL acoustics, 3D sonar, photogrammetry, and inertial systems.",
+    icon: Gauge,
     color: "bg-rose-500/10 text-rose-600"
-  },
-  {
-    title: "Collision Avoidance",
-    description: "Advanced proximity monitoring systems and safety zones to protect marine spreads working in congested offshore fields.",
-    icon: ShieldAlert,
-    color: "bg-yellow-500/10 text-yellow-600"
   }
 ];
 
@@ -52,9 +47,8 @@ export default function SurfacePositioning() {
       <Navigation />
 
       <PageHeader
-        title="Surface Positioning"
-        subtitle="Delivering highly accurate surface navigation and multi-vessel tracking for complex offshore marine operations."
-        image="https://images.unsplash.com/photo-1559828551-2eb94a15a0c0?auto=format&fit=crop&q=80&w=2000"
+        title="Survey"
+        subtitle="Providing survey services to the international offshore industry with over 40 years of expertise."
       />
       <CookieConsent />
 
@@ -64,9 +58,7 @@ export default function SurfacePositioning() {
           <nav className="flex items-center gap-2 text-sm font-bold">
             <Link href="/" className="text-muted-foreground hover:text-primary transition-colors">Home</Link>
             <ChevronRight className="h-4 w-4 text-muted-foreground" />
-            <span className="text-muted-foreground">Positioning</span>
-            <ChevronRight className="h-4 w-4 text-muted-foreground" />
-            <span className="text-primary">Surface Positioning</span>
+            <span className="text-primary">Survey</span>
           </nav>
         </div>
       </div>
@@ -74,9 +66,9 @@ export default function SurfacePositioning() {
       <main className="py-24">
         <div className="container mx-auto px-4 md:px-6">
           <div className="max-w-3xl mb-16">
-            <h2 className="text-3xl font-bold font-display text-primary mb-6">Marine Navigation Excellence</h2>
+            <h2 className="text-3xl font-bold font-display text-primary mb-6">Expert Survey Services</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              Safe and efficient offshore operations depend on absolute spatial awareness at the surface. We provide sophisticated GNSS navigation and telemetry solutions tailored for multi-vessel operations. Whether coordinating a multi-tug rig move, managing an anchor handling spread, or supporting a delicate pipelay campaign, our highly trained survey personnel deliver the real-time data required to execute operations flawlessly and safely.
+              During the last four decades, we have developed considerable experience providing survey data acquisition, processing, and reporting services to leading offshore contractors. We train our personnel to be multi-disciplined experts, ensuring an effective service with optimized team sizes.
             </p>
           </div>
 

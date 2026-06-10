@@ -1,4 +1,5 @@
 import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
 import { PageHeader, ValueCard, CoreValueItem } from "@/components/PageLayout";
 import { CookieConsent } from "@/components/CookieConsent";
 import { Shield, Target, Rocket, Heart } from "lucide-react";
@@ -32,9 +33,9 @@ export default function About() {
   return (
     <div className="bg-background min-h-screen">
       <Navigation />
-      
-      <PageHeader 
-        title="About Jegsen Survey" 
+
+      <PageHeader
+        title="About Jegsen Survey"
         subtitle="Setting the standard for survey and positioning surface to subsea for global offshore projects."
       />
       <CookieConsent />
@@ -43,7 +44,7 @@ export default function About() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <motion.div 
+            <motion.div
               className="lg:w-1/2"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -52,11 +53,11 @@ export default function About() {
               <h2 className="text-3xl md:text-4xl font-bold font-display text-primary mb-8">Who We Are</h2>
               <div className="space-y-6 text-lg text-muted-foreground leading-relaxed">
                 <p>
-                  Jegsen Survey Nigeria Limited is a survey company registered with the Corporate Affairs Commission (RC NO:1318699). 
+                  Jegsen Survey Nigeria Limited is a survey company registered with the Corporate Affairs Commission (RC NO:1318699).
                   We are driven to be the best at everything we do, from strategic planning to business execution and customer satisfaction.
                 </p>
                 <p>
-                  Our success is due in large part to the combined knowledge, expertise, and synergy of our global management team and our strategic partners. 
+                  Our success is due in large part to the combined knowledge, expertise, and synergy of our global management team and our strategic partners.
                   We follow a very strict code of integrity, high standards, and ethical business practices.
                 </p>
               </div>
@@ -69,16 +70,16 @@ export default function About() {
               </div>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="lg:w-1/2 relative"
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-gray-50">
-                <img 
-                  src="https://images.unsplash.com/photo-1573164060897-425941c30241?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Jegsen Operations" 
+                <img
+                  src="https://images.unsplash.com/photo-1573164060897-425941c30241?auto=format&fit=crop&q=80&w=1000"
+                  alt="Jegsen Operations"
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-primary/5" />
@@ -100,7 +101,7 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value, index) => (
-              <ValueCard 
+              <ValueCard
                 key={index}
                 title={value.title}
                 description={value.description}
@@ -111,17 +112,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-white text-primary py-16 border-t shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
-        <div className="container mx-auto px-4 text-center">
-          <img src={logoUrl} alt="Jegsen" className="h-20 w-20 mx-auto mb-6" />
-          <h4 className="text-2xl font-bold font-display mb-4">JEGSEN<span className="text-secondary">SURVEY</span></h4>
-          <p className="text-muted-foreground max-w-md mx-auto mb-8 font-bold">
-            &copy; {new Date().getFullYear()} Jegsen Survey Nig Ltd. All rights reserved.
-            <br />RC NO:1318699
-          </p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

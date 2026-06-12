@@ -47,7 +47,7 @@ export function Footer({ transparentBg = false }: FooterProps) {
                                 { label: "About Us", href: "/about" },
                                 { label: "Onshore Support", href: "/onshore-support" },
                                 { label: "Positioning", href: "/surface-positioning" },
-                                { label: "Survey", href: "/" },
+                                { label: "Survey", href: "/survey" },
                             ].map((link) => (
                                 <li key={link.label}>
                                     <Link

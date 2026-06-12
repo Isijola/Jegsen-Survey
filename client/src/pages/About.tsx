@@ -5,6 +5,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { Shield, Target, Rocket, Heart } from "lucide-react";
 import { motion } from "framer-motion";
 import logoUrl from "@assets/log_1768761231743.png";
+import JegsenOps from "@/assets/ROV_Operation.jpeg";
 
 export default function About() {
   const values = [
@@ -78,7 +79,7 @@ export default function About() {
             >
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-gray-50">
                 <img
-                  src="https://images.unsplash.com/photo-1573164060897-425941c30241?auto=format&fit=crop&q=80&w=1000"
+                  src={JegsenOps}
                   alt="Jegsen Operations"
                   className="w-full h-auto"
                 />

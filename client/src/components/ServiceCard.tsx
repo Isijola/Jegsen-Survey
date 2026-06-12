@@ -1,21 +1,23 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "wouter";
 
 interface ServiceCardProps {
   title: string;
   description: string;
   image: string;
   delay: number;
+  link: string;
 }
 
-export function ServiceCard({ title, description, image, delay }: ServiceCardProps) {
+export function ServiceCard({ title, description, image, delay, link }: ServiceCardProps) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-border/50 hover:shadow-2xl hover:border-accent/30 transition-all duration-300"
+      className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-border/50 hover:shadow-2xl hover:border-accent/30 transition-all duration-300 cursor-pointer"
     >
       <div className="relative h-64 overflow-hidden">
         <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-300 z-10" />
@@ -34,9 +36,9 @@ export function ServiceCard({ title, description, image, delay }: ServiceCardPro
           {description}
         </p>
         
-        <button className="flex items-center text-sm font-bold text-primary uppercase tracking-wider group-hover:text-accent transition-colors">
+        <Link href={link}><button className="flex items-center text-sm font-bold text-primary uppercase tracking-wider group-hover:text-accent transition-colors">
           Learn More <ArrowRight className="ml-2 h-4 w-4 transform group-hover:translate-x-1 transition-transform" />
-        </button>
+        </button></Link>
       </div>
     </motion.div>
   );

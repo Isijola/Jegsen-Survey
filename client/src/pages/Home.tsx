@@ -1,4 +1,4 @@
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
@@ -8,7 +8,7 @@ import { FAQSection } from "@/components/FAQSection";
 import { CookieConsent } from "@/components/CookieConsent";
 import { CheckCircle2, Shield, Globe2, Users } from "lucide-react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import logoUrl from "@assets/log_1768761231743.png";
 import onshoreSupportImg from "@/assets/onshore-support.jpg";
 import surveyServicesImg from "@/assets/survey-services.jpeg";
@@ -21,20 +21,38 @@ export default function Home() {
       title: "Onshore Support",
       description: "Integrated onshore support services operating under robust, transparent governance structures. We deliver reliable topographic and cadastral survey",
       image: onshoreSupportImg,
+      link: "/onshore-support",
     },
     {
       title: "Survey Services",
       description: "Global management expertise delivering high-quality survey services to marine sectors across all project phases and operational requirements.",
       image: surveyServicesImg,
+      link: "/survey",
     },
     {
       title: "Positioning Services",
       description: "World class expertise supporting accurate positioning services for marine sectors across the full lifecycle of projects and operations.",
       image: positioningServicesImg,
+      link: "/surface-positioning",
     },
   ];
 
   const containerRef = useRef<HTMLDivElement>(null);
+  const [location] = useLocation();
+
+  // Scroll to #contact on mount when navigated here via /#contact hash
+  useEffect(() => {
+    if (window.location.hash === "#contact") {
+      // Small timeout lets the page fully render before scrolling
+      const timer = setTimeout(() => {
+        const el = document.getElementById("contact");
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
 
   // Track scroll progress relative to the container.
   // "start end" means when the top of the container touches the bottom of the viewport.
@@ -76,6 +94,7 @@ export default function Home() {
                 description={service.description}
                 image={service.image}
                 delay={index * 0.1}
+                link={service.link}
               />
             ))}
           </div>
@@ -184,7 +203,9 @@ export default function Home() {
         </div>
       </section>
 
-      <ContactSection />
+      <div id="contact">
+        <ContactSection />
+      </div>
 
       <div ref={containerRef} className="bg-white pb-0">
         {/* LexSelect-style Bottom Dark Wrapper for FAQ and Footer */}
@@ -224,4 +245,5 @@ export default function Home() {
       </div>
     </div>
   );
+
 }

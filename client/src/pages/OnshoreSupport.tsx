@@ -15,6 +15,7 @@ import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import logoUrl from "@assets/log_1768761231743.png";
+import { Link } from "wouter";
 
 const features = [
   {
@@ -49,7 +50,7 @@ const features = [
   },
   {
     title: "Expert Team",
-    description: "44 years of combined knowledge. Our established team of experts is always on hand to assist with complex survey queries.",
+    description: "12 years of combined knowledge. Our established team of experts is always on hand to assist with complex survey queries.",
     icon: Users,
     color: "bg-cyan-500/10 text-cyan-600"
   }
@@ -87,10 +88,10 @@ export default function OnshoreSupport() {
                 </p>
               </div>
               <div className="mt-10">
-                <Button size="lg" className="rounded-full font-bold group">
+                <Link href="/#contact"><Button size="lg" className="rounded-full font-bold group">
                   Contact Our Experts
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+                </Button></Link>
               </div>
             </motion.div>
 
@@ -109,7 +110,7 @@ export default function OnshoreSupport() {
                 <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
               </div>
               <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-2xl shadow-xl hidden md:block border">
-                <p className="text-4xl font-bold text-primary font-display">40+</p>
+                <p className="text-4xl font-bold text-primary font-display">12+</p>
                 <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider">Years of Experience</p>
               </div>
             </motion.div>

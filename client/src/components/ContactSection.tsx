@@ -56,7 +56,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <h4 className="font-bold text-primary mb-1">Our Location</h4>
-                  <p className="text-muted-foreground">Jegsen Survey Nigeria Limited<br/>Lagos, Nigeria</p>
+                  <p className="text-muted-foreground">Jegsen Survey Nigeria Limited<br/>Port Harcourt, Nigeria</p>
                 </div>
               </div>
 
@@ -79,7 +79,7 @@ export function ContactSection() {
                 <div>
                   <h4 className="font-bold text-primary mb-1">Call Us</h4>
                   <a href="tel:+2347000000000" className="text-muted-foreground hover:text-accent transition-colors">
-                    +234 700 000 0000
+                    +234 803 618 9775
                   </a>
                 </div>
               </div>
